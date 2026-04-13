@@ -47,43 +47,137 @@ def oferta():
     <html>
     <head>
         <title>IAsim PRO</title>
+
         <style>
             body {
-                background: #0f172a;
-                color: white;
+                margin: 0;
                 font-family: Arial;
+                background: linear-gradient(135deg, #020617, #0f172a);
+                color: white;
                 text-align: center;
-                padding: 40px;
             }
-            .box {
-                max-width: 600px;
+
+            .container {
+                max-width: 700px;
                 margin: auto;
+                padding: 40px 20px;
             }
-            button {
+
+            h1 {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                color: #22c55e;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 1.6;
+            }
+
+            .box {
+                background: #1e293b;
+                padding: 25px;
+                border-radius: 12px;
+                margin: 20px 0;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            }
+
+            .btn {
                 background: #22c55e;
+                color: white;
                 padding: 15px 30px;
                 border: none;
-                color: white;
-                font-size: 18px;
                 border-radius: 8px;
+                font-size: 18px;
                 cursor: pointer;
+                margin-top: 20px;
+                display: inline-block;
+                text-decoration: none;
+                font-weight: bold;
             }
+
+            .btn:hover {
+                background: #16a34a;
+            }
+
+            .alert {
+                color: #facc15;
+                font-weight: bold;
+                margin-top: 20px;
+            }
+
+            .price {
+                font-size: 28px;
+                color: #22c55e;
+                font-weight: bold;
+            }
+
         </style>
     </head>
+
     <body>
 
-        <div class="box">
-            <h1>💰 Ganhe dinheiro com IA automaticamente</h1>
+        <div class="container">
 
-            <p>✔ Ideias virais todos os dias</p>
-            <p>✔ Roteiros prontos</p>
-            <p>✔ Estratégias que vendem</p>
+            <h1>💰 Ganhe dinheiro com Inteligência Artificial todos os dias</h1>
 
-            <h2>🔥 Apenas R$19,90</h2>
+            <p>
+                Mesmo começando do zero, sem experiência e sem aparecer.
+            </p>
 
-            <a href="https://t.me/Iasim_bot">
-                <button>🚀 COMEÇAR AGORA</button>
+            <a href="https://t.me/Iasim_bot" class="btn">
+                🚀 COMEÇAR AGORA
             </a>
+
+            <div class="box">
+                <h2>🤖 O que você recebe:</h2>
+
+                <p>✔ Ideias virais prontas para postar</p>
+                <p>✔ Roteiros curtos que prendem atenção</p>
+                <p>✔ Conteúdos que geram engajamento</p>
+                <p>✔ Estratégias para vender todos os dias</p>
+                <p>✔ Sistema automatizado com IA</p>
+            </div>
+
+            <div class="box">
+                <h2>🔥 Para quem é:</h2>
+
+                <p>✔ Quem quer ganhar dinheiro online</p>
+                <p>✔ Criadores de conteúdo</p>
+                <p>✔ Afiliados e iniciantes</p>
+                <p>✔ Pessoas que querem renda extra</p>
+            </div>
+
+            <div class="box">
+                <h2>🚫 Para quem NÃO é:</h2>
+
+                <p>❌ Quem quer resultados sem fazer nada</p>
+                <p>❌ Quem não vai aplicar o conteúdo</p>
+            </div>
+
+            <div class="box">
+                <h2>💵 Investimento</h2>
+
+                <p class="price">R$19,90</p>
+
+                <p>Acesso completo ao sistema</p>
+
+                <a href="https://t.me/Iasim_bot" class="btn">
+                    🔥 QUERO ACESSAR AGORA
+                </a>
+            </div>
+
+            <p class="alert">
+                ⚠️ Acesso pode sair do ar a qualquer momento
+            </p>
+
+            <p style="margin-top:40px; font-size:14px;">
+                © IAsim PRO - Todos os direitos reservados
+            </p>
+
         </div>
 
     </body>
