@@ -2,13 +2,12 @@ from flask import Flask, request, render_template_string, session, redirect
 import json
 import requests
 import os
+import random
+import string
 
 app = Flask(__name__)
 app.secret_key = "iasim_secret_key_2026"
 
-# ==============================
-# CONFIG
-# ==============================
 MP_ACCESS_TOKEN = "APP_USR-7479127174794036-041215-232df09bcca56ad0d165a4fb4b6708c0-367052923"
 TELEGRAM_TOKEN = "8764613490:AAEtMUmgS0JhL3EsYze10HnWX52juMlIMCQ"
 
@@ -29,307 +28,103 @@ def salvar(dados):
         json.dump(dados, f, indent=4)
 
 # ==============================
+# GERAR TOKEN
+# ==============================
+def gerar_token():
+    return "IASIM-" + ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+
+# ==============================
 # TELEGRAM
 # ==============================
 def enviar_telegram(user_id, msg):
-    try:
-        url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-        requests.post(url, json={"chat_id": user_id, "text": msg})
-    except:
-        print("Erro Telegram")
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+    requests.post(url, json={"chat_id": user_id, "text": msg})
 
 # ==============================
-# LANDING PAGE
-# ==============================
-@app.route('/oferta')
-def oferta():
-    return """
-    <html>
-    <head>
-        <title>IAsim PRO</title>
-
-        <style>
-            body {
-                margin: 0;
-                font-family: Arial;
-                background: linear-gradient(135deg, #020617, #0f172a);
-                color: white;
-                text-align: center;
-            }
-
-            .container {
-                max-width: 700px;
-                margin: auto;
-                padding: 40px 20px;
-            }
-
-            h1 {
-                font-size: 32px;
-                margin-bottom: 20px;
-            }
-
-            h2 {
-                color: #22c55e;
-            }
-
-            p {
-                font-size: 18px;
-                line-height: 1.6;
-            }
-
-            .box {
-                background: #1e293b;
-                padding: 25px;
-                border-radius: 12px;
-                margin: 20px 0;
-                box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            }
-
-            .btn {
-                background: #22c55e;
-                color: white;
-                padding: 15px 30px;
-                border: none;
-                border-radius: 8px;
-                font-size: 18px;
-                cursor: pointer;
-                margin-top: 20px;
-                display: inline-block;
-                text-decoration: none;
-                font-weight: bold;
-            }
-
-            .btn:hover {
-                background: #16a34a;
-            }
-
-            .alert {
-                color: #facc15;
-                font-weight: bold;
-                margin-top: 20px;
-            }
-
-            .price {
-                font-size: 28px;
-                color: #22c55e;
-                font-weight: bold;
-            }
-
-        </style>
-    </head>
-
-    <body>
-
-        <div class="container">
-
-            <h1>💰 Ganhe dinheiro com Inteligência Artificial todos os dias</h1>
-
-            <p>
-                Mesmo começando do zero, sem experiência e sem aparecer.
-            </p>
-
-            <a href="https://t.me/Iasim_bot" class="btn">
-                🚀 COMEÇAR AGORA
-            </a>
-
-            <div class="box">
-                <h2>🤖 O que você recebe:</h2>
-
-                <p>✔ Ideias virais prontas para postar</p>
-                <p>✔ Roteiros curtos que prendem atenção</p>
-                <p>✔ Conteúdos que geram engajamento</p>
-                <p>✔ Estratégias para vender todos os dias</p>
-                <p>✔ Sistema automatizado com IA</p>
-            </div>
-
-            <div class="box">
-                <h2>🔥 Para quem é:</h2>
-
-                <p>✔ Quem quer ganhar dinheiro online</p>
-                <p>✔ Criadores de conteúdo</p>
-                <p>✔ Afiliados e iniciantes</p>
-                <p>✔ Pessoas que querem renda extra</p>
-            </div>
-
-            <div class="box">
-                <h2>🚫 Para quem NÃO é:</h2>
-
-                <p>❌ Quem quer resultados sem fazer nada</p>
-                <p>❌ Quem não vai aplicar o conteúdo</p>
-            </div>
-
-            <div class="box">
-                <h2>💵 Investimento</h2>
-
-                <p class="price">R$19,90</p>
-
-                <p>Acesso completo ao sistema</p>
-
-                <a href="https://t.me/Iasim_bot" class="btn">
-                    🔥 QUERO ACESSAR AGORA
-                </a>
-            </div>
-
-            <p class="alert">
-                ⚠️ Acesso pode sair do ar a qualquer momento
-            </p>
-
-            <p style="margin-top:40px; font-size:14px;">
-                © IAsim PRO - Todos os direitos reservados
-            </p>
-
-        </div>
-
-    </body>
-    </html>
-    """
-
-# ==============================
-# LOGIN ANTIGO (COMPATIBILIDADE)
-# ==============================
-@app.route('/login')
-def login_antigo():
-    user_id = request.args.get("user_id")
-
-    if user_id:
-        session["user_id"] = user_id
-        return redirect("/painel")
-
-    return redirect("/entrar")
-
-# ==============================
-# LOGIN FORMULÁRIO
+# LOGIN
 # ==============================
 @app.route('/entrar', methods=['GET', 'POST'])
 def entrar():
     if request.method == 'POST':
-        user_id = request.form.get("user_id")
+        username = request.form.get("username")
         senha = request.form.get("senha")
 
         usuarios = carregar()
 
-        if user_id not in usuarios:
-            # cria novo usuário
-            usuarios[user_id] = {
+        if username not in usuarios:
+            usuarios[username] = {
+                "senha": senha,
                 "plano": "gratis",
-                "senha": senha
+                "telegram_id": None,
+                "token": None
             }
             salvar(usuarios)
         else:
-            # verifica senha
-            if usuarios[user_id].get("senha") != senha:
+            if usuarios[username]["senha"] != senha:
                 return "❌ Senha incorreta"
 
-        session["user_id"] = user_id
+        session["user"] = username
         return redirect("/painel")
 
     return """
-    <html>
-    <body style="text-align:center; padding:50px;">
-        <h2>Login IAsim</h2>
-        <form method="POST">
-            <input name="user_id" placeholder="Seu ID"><br><br>
-            <input name="senha" type="password" placeholder="Sua senha"><br><br>
-            <button type="submit">Entrar</button>
-        </form>
-    </body>
-    </html>
+    <h2 style='text-align:center'>Login IAsim</h2>
+    <form method="POST" style='text-align:center'>
+        <input name="username" placeholder="Usuário"><br><br>
+        <input name="senha" type="password" placeholder="Senha"><br><br>
+        <button type="submit">Entrar / Criar Conta</button>
+    </form>
     """
 
 # ==============================
-# PAINEL PROFISSIONAL
+# PAINEL
 # ==============================
 @app.route('/painel')
 def painel():
-    user_id = session.get("user_id")
+    username = session.get("user")
 
-    if not user_id:
+    if not username:
         return redirect("/entrar")
 
     usuarios = carregar()
-    user = usuarios.get(user_id)
+    user = usuarios.get(username)
 
     if not user:
         return "Usuário não encontrado"
 
     html = f"""
     <html>
-    <head>
-        <title>IAsim PRO</title>
-        <style>
-            body {{
-                background: linear-gradient(135deg, #0f172a, #020617);
-                color: white;
-                font-family: Arial;
-                text-align: center;
-                padding: 40px;
-            }}
+    <body style="background:#0f172a;color:white;text-align:center;padding:40px;">
+        <h1>🚀 IAsim PRO</h1>
 
-            .box {{
-                background: #1e293b;
-                padding: 40px;
-                border-radius: 15px;
-                display: inline-block;
-                box-shadow: 0 0 25px rgba(0,0,0,0.7);
-                width: 320px;
-            }}
+        <p><b>Plano:</b> {user.get("plano")}</p>
+        <p><b>Nicho:</b> {user.get("nicho","Não definido")}</p>
 
-            .plano {{
-                color: #22c55e;
-                font-weight: bold;
-                font-size: 18px;
-            }}
+        <form action="/salvar_nicho">
+            <input type="hidden" name="username" value="{username}">
+            <input name="nicho" placeholder="Seu nicho">
+            <button>Salvar Nicho</button>
+        </form>
 
-            input {{
-                padding: 12px;
-                border-radius: 8px;
-                border: none;
-                width: 90%;
-                margin-top: 10px;
-            }}
+        <hr>
 
-            button {{
-                background: #22c55e;
-                color: white;
-                padding: 12px;
-                border: none;
-                border-radius: 8px;
-                margin-top: 10px;
-                cursor: pointer;
-                width: 90%;
-                font-weight: bold;
-            }}
+        <p><b>Telegram:</b> {user.get("telegram_id") or "Não conectado"}</p>
 
-            .logout {{
-                background: #ef4444;
-            }}
-        </style>
-    </head>
+        <a href="/gerar_token">
+            <button>🔗 Conectar Telegram</button>
+        </a>
 
-    <body>
-        <div class="box">
-            <h1>🚀 IAsim PRO</h1>
+        <br><br>
 
-            <p>Plano:</p>
-            <p class="plano">{user.get("plano")}</p>
+        <a href="https://t.me/Iasim_bot">
+            <button>🤖 Abrir Bot</button>
+        </a>
 
-            <p>Nicho:</p>
-            <p>{user.get("nicho", "Não definido")}</p>
+        <br><br>
 
-            <form action="/salvar_nicho">
-                <input type="hidden" name="user_id" value="{user_id}">
-                <input name="nicho" placeholder="Digite seu nicho">
-                <button type="submit">Salvar Nicho</button>
-            </form>
+        <a href="/logout">
+            <button style="background:red;">Sair</button>
+        </a>
 
-            <a href="https://t.me/Iasim_bot">
-                <button>🤖 Acessar Bot</button>
-            </a>
-
-            <a href="/logout">
-                <button class="logout">Sair</button>
-            </a>
-        </div>
     </body>
     </html>
     """
@@ -337,48 +132,61 @@ def painel():
     return render_template_string(html)
 
 # ==============================
+# GERAR TOKEN
+# ==============================
+@app.route('/gerar_token')
+def gerar_token_route():
+    username = session.get("user")
+
+    usuarios = carregar()
+
+    token = gerar_token()
+    usuarios[username]["token"] = token
+    salvar(usuarios)
+
+    return f"""
+    <h2>🔐 Código gerado</h2>
+    <p>{token}</p>
+    <p>Envie no bot:</p>
+    <b>/vincular {token}</b>
+    """
+
+# ==============================
 # SALVAR NICHO
 # ==============================
 @app.route('/salvar_nicho')
 def salvar_nicho():
-    user_id = request.args.get("user_id")
+    username = request.args.get("username")
     nicho = request.args.get("nicho")
 
     usuarios = carregar()
 
-    if user_id in usuarios:
-        usuarios[user_id]["nicho"] = nicho
+    if username in usuarios:
+        usuarios[username]["nicho"] = nicho
         salvar(usuarios)
 
     return redirect("/painel")
 
 # ==============================
-# LOGOUT
+# VINCULAR (BOT USA)
 # ==============================
-@app.route('/logout')
-def logout():
-    session.clear()
-    return redirect("/entrar")
+@app.route('/vincular', methods=['POST'])
+def vincular():
+    data = request.json
 
-# ==============================
-# ADMIN
-# ==============================
-@app.route('/admin')
-def admin():
+    token = data.get("token")
+    telegram_id = data.get("telegram_id")
+
     usuarios = carregar()
 
-    total = len(usuarios)
-    vip = sum(1 for u in usuarios.values() if u.get("plano") == "vip")
+    for user, dados in usuarios.items():
+        if dados.get("token") == token:
+            usuarios[user]["telegram_id"] = telegram_id
+            usuarios[user]["token"] = None
+            salvar(usuarios)
+            return {"status": "ok"}
 
-    lista = "".join([f"<p>{uid} - {u.get('plano')}</p>" for uid, u in usuarios.items()])
-
-    return f"""
-    <h1>📊 Painel Admin</h1>
-    <p>Total usuários: {total}</p>
-    <p>VIPs: {vip}</p>
-    <hr>
-    {lista}
-    """
+    return {"status": "erro"}
 
 # ==============================
 # WEBHOOK
@@ -399,19 +207,28 @@ def webhook():
             if resp.get("status") == "approved":
                 usuarios = carregar()
 
-                for user_id, dados in usuarios.items():
+                for user, dados in usuarios.items():
                     if dados.get("payment_id") == payment_id:
-                        usuarios[user_id]["plano"] = "vip"
+                        usuarios[user]["plano"] = "vip"
                         salvar(usuarios)
 
-                        enviar_telegram(
-                            user_id,
-                            "🎉 Pagamento aprovado! VIP liberado 🚀"
-                        )
+                        if dados.get("telegram_id"):
+                            enviar_telegram(
+                                dados["telegram_id"],
+                                "🎉 VIP liberado!"
+                            )
     except Exception as e:
-        print("Erro webhook:", e)
+        print(e)
 
     return "ok"
+
+# ==============================
+# LOGOUT
+# ==============================
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect("/entrar")
 
 # ==============================
 # HOME
