@@ -37,8 +37,11 @@ def gerar_token():
 # TELEGRAM
 # ==============================
 def enviar_telegram(user_id, msg):
-    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-    requests.post(url, json={"chat_id": user_id, "text": msg})
+    try:
+        url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+        requests.post(url, json={"chat_id": user_id, "text": msg})
+    except:
+        print("Erro Telegram")
 
 # ==============================
 # LOGIN
@@ -93,37 +96,75 @@ def painel():
 
     html = f"""
     <html>
-    <body style="background:#0f172a;color:white;text-align:center;padding:40px;">
-        <h1>🚀 IAsim PRO</h1>
+    <head>
+        <style>
+            body {{
+                font-family: Arial;
+                background: #0f172a;
+                color: white;
+                text-align: center;
+                padding: 40px;
+            }}
+            .box {{
+                background: #1e293b;
+                padding: 30px;
+                border-radius: 10px;
+                display: inline-block;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            }}
+            button {{
+                padding: 10px 20px;
+                margin: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                background: #22c55e;
+                color: white;
+                font-weight: bold;
+            }}
+            input {{
+                padding: 10px;
+                border-radius: 5px;
+                border: none;
+                margin-top: 10px;
+            }}
+        </style>
+    </head>
+    <body>
 
-        <p><b>Plano:</b> {user.get("plano")}</p>
-        <p><b>Nicho:</b> {user.get("nicho","Não definido")}</p>
+        <div class="box">
+            <h1>🚀 IAsim PRO</h1>
 
-        <form action="/salvar_nicho">
-            <input type="hidden" name="username" value="{username}">
-            <input name="nicho" placeholder="Seu nicho">
-            <button>Salvar Nicho</button>
-        </form>
+            <p><b>Plano:</b> {user.get("plano")}</p>
+            <p><b>Nicho:</b> {user.get("nicho","Não definido")}</p>
 
-        <hr>
+            <form action="/salvar_nicho">
+                <input type="hidden" name="username" value="{username}">
+                <input name="nicho" placeholder="Seu nicho">
+                <br>
+                <button>Salvar Nicho</button>
+            </form>
 
-        <p><b>Telegram:</b> {user.get("telegram_id") or "Não conectado"}</p>
+            <hr>
 
-        <a href="/gerar_token">
-            <button>🔗 Conectar Telegram</button>
-        </a>
+            <p><b>Telegram:</b> {user.get("telegram_id") or "Não conectado"}</p>
 
-        <br><br>
+            <a href="/gerar_token">
+                <button>🔗 Conectar Telegram</button>
+            </a>
 
-        <a href="https://t.me/Iasim_bot">
-            <button>🤖 Abrir Bot</button>
-        </a>
+            <br>
 
-        <br><br>
+            <a href="https://t.me/Iasim_bot">
+                <button>🤖 Abrir Bot</button>
+            </a>
 
-        <a href="/logout">
-            <button style="background:red;">Sair</button>
-        </a>
+            <br>
+
+            <a href="/logout">
+                <button style="background:red;">Sair</button>
+            </a>
+        </div>
 
     </body>
     </html>
@@ -137,7 +178,6 @@ def painel():
 @app.route('/gerar_token')
 def gerar_token_route():
     username = session.get("user")
-
     usuarios = carregar()
 
     token = gerar_token()
@@ -168,12 +208,11 @@ def salvar_nicho():
     return redirect("/painel")
 
 # ==============================
-# VINCULAR (BOT USA)
+# VINCULAR
 # ==============================
 @app.route('/vincular', methods=['POST'])
 def vincular():
     data = request.json
-
     token = data.get("token")
     telegram_id = data.get("telegram_id")
 
@@ -221,6 +260,32 @@ def webhook():
         print(e)
 
     return "ok"
+
+# ==============================
+# PÁGINA DE VENDAS
+# ==============================
+@app.route('/oferta')
+def oferta():
+    return """
+    <html>
+    <body style="background:#0f172a;color:white;text-align:center;padding:40px;">
+        <h1>🤖 IAsim PRO</h1>
+        <h2>Ganhe dinheiro com IA automaticamente</h2>
+
+        <p>✔ Ideias virais</p>
+        <p>✔ Roteiros prontos</p>
+        <p>✔ Estratégias de vendas</p>
+
+        <h3>💰 Apenas R$19,90</h3>
+
+        <a href="https://t.me/Iasim_bot">
+            <button style="padding:15px;background:#22c55e;border:none;color:white;border-radius:5px;">
+                COMEÇAR AGORA
+            </button>
+        </a>
+    </body>
+    </html>
+    """
 
 # ==============================
 # LOGOUT
