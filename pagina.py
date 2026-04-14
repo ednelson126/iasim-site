@@ -268,21 +268,138 @@ def webhook():
 def oferta():
     return """
     <html>
-    <body style="background:#0f172a;color:white;text-align:center;padding:40px;">
-        <h1>🤖 IAsim PRO</h1>
-        <h2>Ganhe dinheiro com IA automaticamente</h2>
+    <head>
+        <title>IAsim PRO</title>
+        <style>
+            body {
+                font-family: Arial;
+                background: #0f172a;
+                color: white;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
 
-        <p>✔ Ideias virais</p>
-        <p>✔ Roteiros prontos</p>
-        <p>✔ Estratégias de vendas</p>
+            .container {
+                max-width: 700px;
+                margin: auto;
+                padding: 20px;
+            }
 
-        <h3>💰 Apenas R$19,90</h3>
+            .box {
+                background: #1e293b;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+                margin-top: 20px;
+            }
 
-        <a href="https://t.me/Iasim_bot">
-            <button style="padding:15px;background:#22c55e;border:none;color:white;border-radius:5px;">
-                COMEÇAR AGORA
-            </button>
-        </a>
+            h1 {
+                color: #22c55e;
+            }
+
+            button {
+                padding: 15px 25px;
+                background: #22c55e;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 18px;
+                cursor: pointer;
+                margin-top: 20px;
+                font-weight: bold;
+            }
+
+            .highlight {
+                color: #22c55e;
+                font-weight: bold;
+            }
+
+            .price {
+                font-size: 28px;
+                margin: 20px 0;
+            }
+
+            .small {
+                font-size: 12px;
+                color: #94a3b8;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <h1>🤖 IAsim PRO</h1>
+
+            <h2>Ganhe dinheiro com Inteligência Artificial mesmo começando do zero</h2>
+
+            <div class="box">
+                <p>Você está cansado de ver pessoas ganhando dinheiro na internet enquanto você não sabe por onde começar?</p>
+
+                <p class="highlight">Agora você tem acesso ao mesmo tipo de sistema que cria conteúdos virais automaticamente.</p>
+            </div>
+
+            <div class="box">
+                <h3>🚀 O que você vai receber:</h3>
+
+                <p>✔ Ideias virais prontas para postar</p>
+                <p>✔ Roteiros prontos para vídeos</p>
+                <p>✔ Conteúdos com alto potencial de engajamento</p>
+                <p>✔ Estratégias de vendas prontas</p>
+                <p>✔ Acesso ao bot exclusivo no Telegram</p>
+                <p>✔ Painel profissional de controle</p>
+            </div>
+
+            <div class="box">
+                <h3>🔥 Para quem é:</h3>
+
+                <p>✔ Quem quer ganhar dinheiro online</p>
+                <p>✔ Quem quer crescer no Instagram / TikTok</p>
+                <p>✔ Quem quer vender mais</p>
+                <p>✔ Mesmo sem experiência</p>
+            </div>
+
+            <div class="box">
+                <h3>⚡ Diferenciais:</h3>
+
+                <p>✔ Funciona direto no celular</p>
+                <p>✔ Não precisa aparecer</p>
+                <p>✔ Não precisa saber nada de tecnologia</p>
+                <p>✔ Resultados rápidos</p>
+            </div>
+
+            <div class="box">
+                <h3>💰 Oferta especial</h3>
+
+                <p class="price">Apenas R$19,90</p>
+
+                <p class="highlight">Acesso imediato após pagamento</p>
+
+                <a href="https://t.me/Iasim_bot">
+                    <button>🚀 COMEÇAR AGORA</button>
+                </a>
+
+                <p class="small">Pagamento único • Acesso liberado rapidamente</p>
+            </div>
+
+            <div class="box">
+                <h3>🔒 Garantia</h3>
+
+                <p>Você pode testar o sistema e ver o potencial por conta própria.</p>
+                <p>Sem risco — acesso imediato.</p>
+            </div>
+
+            <div class="box">
+                <h3>⚠️ Atenção</h3>
+
+                <p>Essa oferta pode sair do ar a qualquer momento.</p>
+                <p class="highlight">Entre agora antes que o acesso seja limitado.</p>
+            </div>
+
+        </div>
+
     </body>
     </html>
     """
