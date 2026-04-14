@@ -270,33 +270,31 @@ def oferta():
     <html>
     <head>
         <title>IAsim PRO</title>
+
         <style>
             body {
                 font-family: Arial;
                 background: #0f172a;
                 color: white;
                 margin: 0;
-                padding: 0;
                 text-align: center;
             }
 
             .container {
-                max-width: 700px;
+                max-width: 800px;
                 margin: auto;
                 padding: 20px;
             }
 
             .box {
                 background: #1e293b;
-                padding: 30px;
+                padding: 25px;
                 border-radius: 10px;
-                box-shadow: 0 0 20px rgba(0,0,0,0.5);
                 margin-top: 20px;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
             }
 
-            h1 {
-                color: #22c55e;
-            }
+            h1 { color: #22c55e; }
 
             button {
                 padding: 15px 25px;
@@ -310,21 +308,44 @@ def oferta():
                 font-weight: bold;
             }
 
-            .highlight {
+            .price {
+                font-size: 32px;
+                margin: 20px;
                 color: #22c55e;
+            }
+
+            .timer {
+                font-size: 22px;
+                color: #facc15;
                 font-weight: bold;
             }
 
-            .price {
-                font-size: 28px;
-                margin: 20px 0;
-            }
-
-            .small {
-                font-size: 12px;
-                color: #94a3b8;
+            iframe {
+                width: 100%;
+                height: 400px;
+                border-radius: 10px;
             }
         </style>
+
+        <script>
+            function startTimer() {
+                var time = 600; // 10 minutos
+
+                setInterval(function() {
+                    var min = Math.floor(time / 60);
+                    var sec = time % 60;
+
+                    document.getElementById("timer").innerHTML =
+                        "⏳ Oferta expira em: " + min + ":" + (sec < 10 ? "0" : "") + sec;
+
+                    if (time > 0) {
+                        time--;
+                    }
+                }, 1000);
+            }
+
+            window.onload = startTimer;
+        </script>
     </head>
 
     <body>
@@ -332,70 +353,68 @@ def oferta():
         <div class="container">
 
             <h1>🤖 IAsim PRO</h1>
+            <h2>Ganhe dinheiro com IA automaticamente</h2>
 
-            <h2>Ganhe dinheiro com Inteligência Artificial mesmo começando do zero</h2>
-
+            <!-- VSL -->
             <div class="box">
-                <p>Você está cansado de ver pessoas ganhando dinheiro na internet enquanto você não sabe por onde começar?</p>
-
-                <p class="highlight">Agora você tem acesso ao mesmo tipo de sistema que cria conteúdos virais automaticamente.</p>
+                <h3>🎥 Assista antes de começar</h3>
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                allowfullscreen></iframe>
             </div>
 
+            <!-- COPY -->
             <div class="box">
-                <h3>🚀 O que você vai receber:</h3>
+                <p>Você está vendo pessoas ganhando dinheiro com Inteligência Artificial...</p>
+                <p><b>Mas não sabe por onde começar?</b></p>
 
-                <p>✔ Ideias virais prontas para postar</p>
-                <p>✔ Roteiros prontos para vídeos</p>
-                <p>✔ Conteúdos com alto potencial de engajamento</p>
-                <p>✔ Estratégias de vendas prontas</p>
-                <p>✔ Acesso ao bot exclusivo no Telegram</p>
-                <p>✔ Painel profissional de controle</p>
+                <p style="color:#22c55e;">
+                Esse sistema faz isso por você automaticamente.
+                </p>
             </div>
 
+            <!-- BENEFÍCIOS -->
             <div class="box">
-                <h3>🔥 Para quem é:</h3>
-
-                <p>✔ Quem quer ganhar dinheiro online</p>
-                <p>✔ Quem quer crescer no Instagram / TikTok</p>
-                <p>✔ Quem quer vender mais</p>
-                <p>✔ Mesmo sem experiência</p>
+                <h3>🚀 O que você recebe:</h3>
+                <p>✔ Ideias virais prontas</p>
+                <p>✔ Roteiros para vídeos</p>
+                <p>✔ Conteúdos prontos</p>
+                <p>✔ Estratégias de vendas</p>
+                <p>✔ Bot exclusivo no Telegram</p>
             </div>
 
+            <!-- PROVA SOCIAL -->
             <div class="box">
-                <h3>⚡ Diferenciais:</h3>
+                <h3>💬 Depoimentos</h3>
 
-                <p>✔ Funciona direto no celular</p>
-                <p>✔ Não precisa aparecer</p>
-                <p>✔ Não precisa saber nada de tecnologia</p>
-                <p>✔ Resultados rápidos</p>
+                <p>⭐⭐⭐⭐⭐ “Comecei ontem e já tive ideias incríveis!”</p>
+                <p>⭐⭐⭐⭐⭐ “Muito melhor do que eu esperava!”</p>
+                <p>⭐⭐⭐⭐⭐ “Simplesmente funciona!”</p>
+                <p>⭐⭐⭐⭐⭐ “Já estou aplicando e vendo resultado!”</p>
             </div>
 
+            <!-- CONTADOR -->
             <div class="box">
-                <h3>💰 Oferta especial</h3>
+                <p id="timer" class="timer"></p>
+                <p>⚠️ A oferta pode encerrar a qualquer momento</p>
+            </div>
 
-                <p class="price">Apenas R$19,90</p>
+            <!-- PREÇO -->
+            <div class="box">
+                <h3>💰 Oferta Especial</h3>
 
-                <p class="highlight">Acesso imediato após pagamento</p>
+                <div class="price">R$19,90</div>
 
                 <a href="https://t.me/Iasim_bot">
                     <button>🚀 COMEÇAR AGORA</button>
                 </a>
 
-                <p class="small">Pagamento único • Acesso liberado rapidamente</p>
+                <p>Pagamento único • Acesso imediato</p>
             </div>
 
+            <!-- GARANTIA -->
             <div class="box">
                 <h3>🔒 Garantia</h3>
-
-                <p>Você pode testar o sistema e ver o potencial por conta própria.</p>
-                <p>Sem risco — acesso imediato.</p>
-            </div>
-
-            <div class="box">
-                <h3>⚠️ Atenção</h3>
-
-                <p>Essa oferta pode sair do ar a qualquer momento.</p>
-                <p class="highlight">Entre agora antes que o acesso seja limitado.</p>
+                <p>Teste sem risco. Acesso imediato ao sistema.</p>
             </div>
 
         </div>
