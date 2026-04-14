@@ -204,11 +204,21 @@ def login_antigo():
 def entrar():
     if request.method == 'POST':
         user_id = request.form.get("user_id")
+        senha = request.form.get("senha")
 
         usuarios = carregar()
+
         if user_id not in usuarios:
-            usuarios[user_id] = {"plano": "gratis"}
+            # cria novo usuário
+            usuarios[user_id] = {
+                "plano": "gratis",
+                "senha": senha
+            }
             salvar(usuarios)
+        else:
+            # verifica senha
+            if usuarios[user_id].get("senha") != senha:
+                return "❌ Senha incorreta"
 
         session["user_id"] = user_id
         return redirect("/painel")
@@ -218,7 +228,8 @@ def entrar():
     <body style="text-align:center; padding:50px;">
         <h2>Login IAsim</h2>
         <form method="POST">
-            <input name="user_id" placeholder="Seu ID Telegram"><br><br>
+            <input name="user_id" placeholder="Seu ID"><br><br>
+            <input name="senha" type="password" placeholder="Sua senha"><br><br>
             <button type="submit">Entrar</button>
         </form>
     </body>
