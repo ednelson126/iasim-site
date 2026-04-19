@@ -281,7 +281,7 @@ def oferta():
             }
 
             .container {
-                max-width: 800px;
+                max-width: 850px;
                 margin: auto;
                 padding: 20px;
             }
@@ -291,32 +291,38 @@ def oferta():
                 padding: 25px;
                 border-radius: 10px;
                 margin-top: 20px;
-                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+                box-shadow: 0 0 20px rgba(0,0,0,0.6);
+                text-align: left;
+            }
+
+            h1, h2, h3 {
+                text-align: center;
             }
 
             h1 { color: #22c55e; }
 
             button {
-                padding: 15px 25px;
+                padding: 15px;
                 background: #22c55e;
                 color: white;
                 border: none;
                 border-radius: 5px;
                 font-size: 18px;
                 cursor: pointer;
-                margin-top: 20px;
+                width: 100%;
+                margin-top: 15px;
                 font-weight: bold;
             }
 
             .price {
-                font-size: 32px;
-                margin: 20px;
+                font-size: 36px;
                 color: #22c55e;
+                text-align: center;
+                margin: 10px;
             }
 
-            .timer {
-                font-size: 22px;
-                color: #facc15;
+            .highlight {
+                color: #22c55e;
                 font-weight: bold;
             }
 
@@ -325,27 +331,33 @@ def oferta():
                 height: 400px;
                 border-radius: 10px;
             }
+
+            .timer {
+                font-size: 22px;
+                color: #facc15;
+                text-align: center;
+                font-weight: bold;
+            }
         </style>
 
         <script>
             function startTimer() {
-                var time = 600; // 10 minutos
+                var time = 1200;
 
                 setInterval(function() {
                     var min = Math.floor(time / 60);
                     var sec = time % 60;
 
                     document.getElementById("timer").innerHTML =
-                        "⏳ Oferta expira em: " + min + ":" + (sec < 10 ? "0" : "") + sec;
+                        "⏳ Essa página pode sair do ar em: " + min + ":" + (sec < 10 ? "0" : "") + sec;
 
-                    if (time > 0) {
-                        time--;
-                    }
+                    if (time > 0) time--;
                 }, 1000);
             }
 
             window.onload = startTimer;
         </script>
+
     </head>
 
     <body>
@@ -353,68 +365,142 @@ def oferta():
         <div class="container">
 
             <h1>🤖 IAsim PRO</h1>
-            <h2>Ganhe dinheiro com IA automaticamente</h2>
+            <h2>O jeito mais simples de começar a ganhar dinheiro com IA ainda hoje</h2>
 
             <!-- VSL -->
             <div class="box">
-                <h3>🎥 Assista antes de começar</h3>
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                allowfullscreen></iframe>
+                <h3>⚠️ Assista isso antes de tomar qualquer decisão</h3>
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
             </div>
 
-            <!-- COPY -->
+            <!-- DOR -->
             <div class="box">
-                <p>Você está vendo pessoas ganhando dinheiro com Inteligência Artificial...</p>
-                <p><b>Mas não sabe por onde começar?</b></p>
+                <h3>Seja sincero...</h3>
 
-                <p style="color:#22c55e;">
-                Esse sistema faz isso por você automaticamente.
+                <p>Você já tentou ganhar dinheiro na internet e não conseguiu?</p>
+
+                <p>Já viu pessoas crescendo enquanto você continua no mesmo lugar?</p>
+
+                <p class="highlight">E isso começa a dar uma sensação ruim… de estar ficando pra trás.</p>
+            </div>
+
+            <!-- HISTÓRIA -->
+            <div class="box">
+                <h3>A diferença entre quem consegue e quem não consegue</h3>
+
+                <p>Não é inteligência.</p>
+                <p>Não é sorte.</p>
+
+                <p class="highlight">É acesso às ferramentas certas.</p>
+
+                <p>E hoje, quem usa IA está anos na frente.</p>
+            </div>
+
+            <!-- SOLUÇÃO -->
+            <div class="box">
+                <h3>🚀 Foi por isso que criamos o IAsim PRO</h3>
+
+                <p>Um sistema que literalmente pensa por você.</p>
+
+                <p class="highlight">Ele cria conteúdo, ideias e estratégias automaticamente.</p>
+            </div>
+
+            <!-- DETALHAMENTO EXTREMO -->
+            <div class="box">
+                <h3>💡 Tudo que você recebe:</h3>
+
+                <p><b>🔥 Ideias virais:</b><br>
+                Nunca mais fique travado. Receba ideias que prendem atenção imediatamente.</p>
+
+                <p><b>🎬 Roteiros prontos:</b><br>
+                Vídeos estruturados para engajar e crescer.</p>
+
+                <p><b>📱 Conteúdos completos:</b><br>
+                Textos prontos para copiar e usar.</p>
+
+                <p><b>💰 Estratégias de venda:</b><br>
+                Técnicas usadas por quem realmente ganha dinheiro.</p>
+
+                <p class="highlight">
+                Tudo isso direto no Telegram, simples e rápido.
                 </p>
             </div>
 
-            <!-- BENEFÍCIOS -->
+            <!-- PROVA -->
             <div class="box">
-                <h3>🚀 O que você recebe:</h3>
-                <p>✔ Ideias virais prontas</p>
-                <p>✔ Roteiros para vídeos</p>
-                <p>✔ Conteúdos prontos</p>
-                <p>✔ Estratégias de vendas</p>
-                <p>✔ Bot exclusivo no Telegram</p>
+                <h3>💬 Resultados reais</h3>
+
+                <p>⭐⭐⭐⭐⭐ “Nunca mais fiquei sem ideia”</p>
+                <p>⭐⭐⭐⭐⭐ “Comecei do zero e já estou postando todo dia”</p>
+                <p>⭐⭐⭐⭐⭐ “Simples e poderoso”</p>
             </div>
 
-            <!-- PROVA SOCIAL -->
+            <!-- QUEBRA DE OBJEÇÃO -->
             <div class="box">
-                <h3>💬 Depoimentos</h3>
+                <h3>❌ Não é pra você se:</h3>
 
-                <p>⭐⭐⭐⭐⭐ “Comecei ontem e já tive ideias incríveis!”</p>
-                <p>⭐⭐⭐⭐⭐ “Muito melhor do que eu esperava!”</p>
-                <p>⭐⭐⭐⭐⭐ “Simplesmente funciona!”</p>
-                <p>⭐⭐⭐⭐⭐ “Já estou aplicando e vendo resultado!”</p>
+                <p>Você não quer agir.</p>
+                <p>Prefere continuar tentando sozinho.</p>
+
+                <h3>✅ É pra você se:</h3>
+
+                <p>Quer algo pronto.</p>
+                <p>Quer começar rápido.</p>
+                <p>Quer resultado.</p>
             </div>
 
-            <!-- CONTADOR -->
+            <!-- URGÊNCIA -->
             <div class="box">
                 <p id="timer" class="timer"></p>
-                <p>⚠️ A oferta pode encerrar a qualquer momento</p>
+                <p style="text-align:center;">⚠️ Essa condição pode sair do ar a qualquer momento</p>
             </div>
 
-            <!-- PREÇO -->
+            <!-- ANCORAGEM -->
             <div class="box">
-                <h3>💰 Oferta Especial</h3>
+                <h3>💰 Quanto isso deveria custar?</h3>
 
-                <div class="price">R$19,90</div>
+                <p>Se fosse um curso completo… seria facilmente R$197 ou mais.</p>
+
+                <p>Mas hoje você não vai pagar isso.</p>
+            </div>
+
+            <!-- OFERTA -->
+            <div class="box">
+                <h3>🔥 Oferta especial hoje</h3>
+
+                <p class="price">R$19,90</p>
+
+                <p style="text-align:center;">
+                Pagamento único • Acesso imediato
+                </p>
 
                 <a href="https://t.me/Iasim_bot">
-                    <button>🚀 COMEÇAR AGORA</button>
+                    <button>🚀 QUERO ACESSAR AGORA</button>
                 </a>
-
-                <p>Pagamento único • Acesso imediato</p>
             </div>
 
             <!-- GARANTIA -->
             <div class="box">
-                <h3>🔒 Garantia</h3>
-                <p>Teste sem risco. Acesso imediato ao sistema.</p>
+                <h3>🔒 Zero risco</h3>
+
+                <p>Você pode testar e ver por conta própria.</p>
+
+                <p class="highlight">Sem risco. Sem complicação.</p>
+            </div>
+
+            <!-- FECHAMENTO -->
+            <div class="box">
+                <h3>Agora a escolha é sua</h3>
+
+                <p>Continuar parado…</p>
+
+                <p>Ou começar agora com algo pronto.</p>
+
+                <p class="highlight">A oportunidade está aqui.</p>
+
+                <a href="https://t.me/Iasim_bot">
+                    <button>🔥 COMEÇAR AGORA</button>
+                </a>
             </div>
 
         </div>
