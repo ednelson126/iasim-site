@@ -279,9 +279,10 @@ def oferta():
         <style>
             :root {
                 --brand: #00ff88;
-                --dark: #07090c;
-                --surface: #12151c;
-                --text-main: #f3f4f6;
+                --dark: #05070a;
+                --surface: #0f172a;
+                --text-main: #f8fafc;
+                --text-dim: #94a3b8;
             }
 
             body {
@@ -296,139 +297,158 @@ def oferta():
             /* Notificação de Venda */
             #sale-notif {
                 position: fixed;
-                bottom: 20px;
+                bottom: 25px;
                 left: 20px;
-                background: white;
-                color: #111;
-                padding: 12px 20px;
-                border-radius: 12px;
+                background: #ffffff;
+                color: #0f172a;
+                padding: 14px 22px;
+                border-radius: 16px;
                 display: flex;
                 align-items: center;
                 gap: 12px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                z-index: 9999;
-                transform: translateY(200%);
-                transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-                font-size: 13px;
-                min-width: 250px;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+                z-index: 10000;
+                transform: translateY(250%);
+                transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+                font-size: 14px;
             }
 
+            /* --- Hero Section --- */
             .hero {
-                padding: 80px 20px;
+                padding: 120px 20px 80px;
                 text-align: center;
-                background: radial-gradient(circle at center, #161b22 0%, var(--dark) 100%);
+                background: radial-gradient(circle at 50% 0%, #1e293b 0%, var(--dark) 75%);
             }
 
             h1 {
-                font-size: clamp(1.8rem, 5vw, 3.5rem);
+                font-size: clamp(2rem, 6vw, 4rem);
                 font-weight: 800;
-                max-width: 850px;
-                margin: 0 auto 20px;
+                max-width: 950px;
+                margin: 0 auto 25px;
                 line-height: 1.1;
-                letter-spacing: -1px;
+                letter-spacing: -2px;
             }
 
             .accent { color: var(--brand); }
 
+            /* --- Vídeo VSL --- */
             .video-wrapper {
-                max-width: 800px;
-                margin: -40px auto 60px;
-                padding: 10px;
-                background: rgba(255,255,255,0.03);
-                border-radius: 24px;
-                border: 1px solid rgba(255,255,255,0.1);
+                max-width: 900px;
+                margin: -40px auto 100px;
+                padding: 12px;
+                background: rgba(255,255,255,0.02);
+                border-radius: 32px;
+                border: 1px solid rgba(255,255,255,0.08);
             }
 
             .video-container {
                 position: relative;
                 padding-bottom: 56.25%;
                 height: 0;
-                border-radius: 16px;
+                border-radius: 20px;
                 overflow: hidden;
+                box-shadow: 0 40px 100px rgba(0,0,0,0.5);
             }
 
             .video-container iframe {
-                position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
             }
 
-            .section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+            /* --- Seções Gerais --- */
+            .section { padding: 100px 20px; max-width: 1200px; margin: auto; }
+            h2.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 60px; font-weight: 800; }
 
+            /* --- Grid de Serviços --- */
             .grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 30px;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 40px;
             }
 
             .card {
                 background: var(--surface);
-                border-radius: 24px;
+                border-radius: 28px;
                 border: 1px solid rgba(255,255,255,0.05);
                 overflow: hidden;
-                transition: 0.3s;
+                transition: transform 0.3s ease;
             }
 
-            .card-img {
-                width: 100%;
-                height: 220px;
-                object-fit: cover;
+            .card:hover { transform: translateY(-12px); border-color: var(--brand); }
+
+            .card-img { width: 100%; height: 240px; object-fit: cover; }
+            .card-body { padding: 35px; }
+            .card-body h3 { margin: 0 0 15px; color: var(--brand); font-size: 1.5rem; }
+
+            /* --- Seção de Público-Alvo --- */
+            .target-list {
+                display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 40px;
             }
 
-            .card-body { padding: 25px; }
-            .card-body h3 { margin-top: 0; color: var(--brand); }
+            .target-item {
+                background: rgba(255,255,255,0.03);
+                padding: 15px 30px;
+                border-radius: 100px;
+                border: 1px solid rgba(255,255,255,0.1);
+                font-weight: 600;
+            }
 
-            /* Ajuste nos Depoimentos para não cortar texto */
+            /* --- Depoimentos Corrigidos --- */
             .test-scroll {
-                display: flex; gap: 20px; overflow-x: auto; padding: 20px 0; scrollbar-width: none;
+                display: flex; gap: 25px; overflow-x: auto; padding: 20px 0 40px; scrollbar-width: none;
             }
 
             .test-item {
-                min-width: 320px;
-                max-width: 320px;
-                background: #1a1e26;
-                padding: 25px;
-                border-radius: 18px;
-                border-bottom: 3px solid var(--brand);
-                word-wrap: break-word;
-                overflow-wrap: break-word;
+                min-width: 350px;
+                max-width: 350px;
+                background: #1e293b;
+                padding: 35px;
+                border-radius: 24px;
+                border-bottom: 4px solid var(--brand);
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                min-height: 280px;
             }
 
-            .user-info {
-                display: flex; align-items: center; gap: 12px; margin-bottom: 15px;
-            }
-
+            .user-info { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
             .user-info img {
-                width: 50px; height: 50px; border-radius: 50%; object-fit: cover;
-                flex-shrink: 0;
+                width: 60px; height: 60px; border-radius: 50%; object-fit: cover;
+                border: 2px solid var(--brand);
             }
 
+            .test-text { font-style: italic; color: #cbd5e1; line-height: 1.5; font-size: 15px; }
+
+            /* --- FAQ --- */
+            .faq-container { max-width: 800px; margin: auto; }
+            .faq-item { background: #111827; padding: 25px; border-radius: 15px; margin-bottom: 15px; border-left: 4px solid var(--brand); }
+
+            /* --- CTA Area --- */
             .cta-box {
                 text-align: center;
-                padding: 100px 20px;
-                background: #0d1117;
-                border-radius: 40px;
-                margin: 40px 20px;
+                padding: 120px 20px;
+                background: linear-gradient(180deg, var(--dark) 0%, #020617 100%);
             }
 
             .main-btn {
                 background: var(--brand);
                 color: #000;
                 text-decoration: none;
-                padding: 22px 60px;
-                font-size: 1.3rem;
+                padding: 28px 70px;
+                font-size: 1.5rem;
                 font-weight: 800;
-                border-radius: 14px;
+                border-radius: 20px;
                 display: inline-block;
+                box-shadow: 0 25px 50px rgba(0, 255, 136, 0.2);
                 transition: 0.3s;
             }
 
+            .main-btn:hover { transform: scale(1.05); }
+
             footer {
-                padding: 40px;
+                padding: 60px 20px;
                 text-align: center;
                 font-size: 14px;
-                color: #4b5563;
+                color: #475569;
                 border-top: 1px solid rgba(255,255,255,0.05);
             }
         </style>
@@ -436,80 +456,103 @@ def oferta():
     <body>
 
     <div id="sale-notif">
-        <i class="fas fa-check-circle" style="color: #00c853; font-size: 18px;"></i>
+        <i class="fas fa-check-circle" style="color: #10b981; font-size: 20px;"></i>
         <span id="notif-content">...</span>
     </div>
 
     <section class="hero">
         <h1>O Bot que cria <span class="accent">Roteiros e Conteúdos Virais</span> para você lucrar todos os dias.</h1>
-        <p style="color: #94a3b8; font-size: 1.1rem; max-width: 600px; margin: auto;">Deixe a Inteligência Artificial criar sua estratégia enquanto você escala seu faturamento.</p>
+        <p style="color: var(--text-dim); font-size: 1.3rem; max-width: 750px; margin: auto;">Chega de bloqueio criativo. Tenha uma linha de produção de conteúdo automatizada em suas mãos.</p>
     </section>
 
     <div class="video-wrapper">
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
         </div>
     </div>
 
     <div class="section">
-        <h2 style="text-align:center; margin-bottom: 50px;">O que o IAsim Pró entrega</h2>
+        <h2 class="section-title">Engenharia de Conversão</h2>
         <div class="grid">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Escrita de roteiros">
+                <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Scripts">
                 <div class="card-body">
-                    <h3>Roteiros Magnéticos</h3>
-                    <p>Scripts otimizados com ganchos de retenção que forçam o espectador a assistir até o fim e engajar.</p>
+                    <h3>Scripts Magnéticos</h3>
+                    <p>Estruturas de roteiros validadas para TikTok, Reels e YouTube Shorts que garantem retenção acima da média.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Análise de dados">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Trends">
                 <div class="card-body">
-                    <h3>Análise de Tendências</h3>
-                    <p>O bot identifica o que está em alta no mercado antes de todo mundo, mantendo você sempre no topo.</p>
+                    <h3>Trends em Tempo Real</h3>
+                    <p>O bot monitora o que está viralizando e adapta seu nicho para surfar na onda antes da saturação.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Marketing e Vendas">
+                <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Copywriting">
                 <div class="card-body">
-                    <h3>Copy para Vendas</h3>
-                    <p>Transforme visualizações em dinheiro com chamadas para ação (CTAs) impossíveis de serem ignoradas.</p>
+                    <h3>Copywriting de Elite</h3>
+                    <p>Legendas e CTAs que não apenas informam, mas convertem curiosos em seguidores e compradores.</p>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="section" style="background: rgba(255,255,255,0.02); border-radius: 60px;">
+        <h2 class="section-title">Para quem é o IAsim Pró?</h2>
+        <div class="target-list">
+            <div class="target-item">Infoprodutores</div>
+            <div class="target-item">Gestores de Tráfego</div>
+            <div class="target-item">Social Medias</div>
+            <div class="target-item">Afiliados</div>
+            <div class="target-item">Negócios Locais</div>
+            <div class="target-item">Influencers em ascensão</div>
+        </div>
+    </div>
+
     <div class="section">
-        <h2 style="text-align:center;">Resultados Reais</h2>
+        <h2 class="section-title">Resultados Reais</h2>
         <div class="test-scroll">
             <div class="test-item">
                 <div class="user-info">
-                    <img src="https://i.pravatar.cc/150?u=12">
-                    <div><b>Ricardo Alencar</b><br><small>Criador de Conteúdo</small></div>
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ricardo">
+                    <div><b>Ricardo Alencar</b><br><small>Produtor Digital</small></div>
                 </div>
-                <p>"O bot gerou um roteiro que bateu 100k views em menos de 24h. O engajamento subiu de forma bizarro."</p>
+                <div class="test-text">"O bot gerou um roteiro que bateu 150k views em apenas 18 horas. Nunca vi nada tão preciso para prender a atenção do público."</div>
             </div>
+            
             <div class="test-item">
                 <div class="user-info">
-                    <img src="https://i.pravatar.cc/150?u=25">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Julia">
                     <div><b>Julia Mendes</b><br><small>Social Media</small></div>
                 </div>
-                <p>"Ganhei horas de produtividade. Entrego cronogramas inteiros para meus clientes em poucos minutos."</p>
+                <div class="test-text">"Parei de perder noites criando calendários. O IAsim Pró faz em 5 minutos o que eu levava 3 dias para estruturar."</div>
             </div>
+            
             <div class="test-item">
                 <div class="user-info">
-                    <img src="https://i.pravatar.cc/150?u=male_bruno">
-                    <div><b>Bruno Costa</b><br><small>Empreendedor</small></div>
+                    <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Bruno">
+                    <div><b>Bruno Costa</b><br><small>Afiliado Profissional</small></div>
                 </div>
-                <p>"As ideias de vídeos rápidos são o que mais trazem leads qualificados para o meu WhatsApp hoje."</p>
+                <div class="test-text">"As CTAs desse bot são matadoras. Minha taxa de conversão no tráfego orgânico subiu 40% desde que comecei a usar."</div>
             </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Dúvidas Frequentes</h2>
+        <div class="faq-container">
+            <div class="faq-item"><b>O acesso é vitalício?</b><br>Sim. Você paga uma única vez e terá acesso para sempre, incluindo atualizações.</div>
+            <div class="faq-item"><b>Funciona para qualquer nicho?</b><br>Sim. O bot foi treinado para se adaptar a qualquer área, desde saúde até marketing e entretenimento.</div>
+            <div class="faq-item"><b>Preciso pagar mensalidade na IA?</b><br>Não. A estrutura do IAsim Pró é independente para que você não tenha custos ocultos.</div>
         </div>
     </div>
 
     <div class="cta-box">
-        <h2 style="font-size: 3.5rem; margin: 0;" class="accent">R$ 19,90</h2>
-        <p style="margin: 20px 0 40px; opacity: 0.7;">Pagamento único. Acesso vitalício imediato.</p>
+        <h2 style="font-size: 4.5rem; margin: 0;" class="accent">R$ 19,90</h2>
+        <p style="margin: 25px 0 50px; opacity: 0.8; font-size: 1.2rem;">Oferta por tempo limitado. Leve o pack completo hoje.</p>
         <a href="https://t.me/Iasim_bot" class="main-btn">
-            ATIVAR MEU ACESSO AGORA <i class="fas fa-rocket" style="margin-left: 10px;"></i>
+            QUERO O MEU ACESSO AGORA <i class="fas fa-chevron-right" style="margin-left: 15px;"></i>
         </a>
     </div>
 
@@ -518,34 +561,28 @@ def oferta():
     </footer>
 
     <script>
-        // Banco de dados diversificado para notificações
         const buyers = [
             {n: "Rafael", c: "São Paulo"}, {n: "Beatriz", c: "Curitiba"},
-            {n: "Thiago", c: "Fortaleza"}, {n: "Larissa", c: "Rio de Janeiro"},
-            {n: "Gustavo", c: "Belo Horizonte"}, {n: "Aline", c: "Salvador"},
-            {n: "Felipe", c: "Florianópolis"}, {n: "Camila", c: "Brasília"},
-            {n: "Rodrigo", c: "Porto Alegre"}, {n: "Isabela", c: "Recife"}
+            {n: "Thiago", c: "Fortaleza"}, {n: "Larissa", c: "Porto Alegre"},
+            {n: "Gustavo", c: "Belo Horizonte"}, {n: "Amanda", c: "Manaus"},
+            {n: "Felipe", c: "Florianópolis"}, {n: "Mariana", c: "Recife"},
+            {n: "Caio", c: "Cuiabá"}, {n: "Fernanda", c: "Vitória"}
         ];
 
-        let lastIndex = -1;
+        let currentIdx = 0;
 
         function showNotif() {
             const el = document.getElementById('sale-notif');
             const content = document.getElementById('notif-content');
             
-            let randomIndex;
-            do {
-                randomIndex = Math.floor(Math.random() * buyers.length);
-            } while (randomIndex === lastIndex);
+            const buyer = buyers[currentIdx];
+            currentIdx = (currentIdx + 1) % buyers.length;
             
-            lastIndex = randomIndex;
-            const buyer = buyers[randomIndex];
-            
-            content.innerHTML = `<b>${buyer.n}</b> (${buyer.c}) acabou de adquirir o IAsim Pró`;
+            content.innerHTML = `<b>${buyer.n}</b> de ${buyer.c} acabou de ativar o IAsim Pró`;
             
             el.style.transform = "translateY(0)";
             setTimeout(() => {
-                el.style.transform = "translateY(200%)";
+                el.style.transform = "translateY(250%)";
             }, 4500);
         }
 
