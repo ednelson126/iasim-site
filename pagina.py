@@ -272,283 +272,219 @@ def oferta():
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>IAsim PRO - Dominando a Inteligência Artificial</title>
+        <title>IAsim PRO | O Império da IA</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
         
         <style>
             :root {
                 --primary: #00ff88;
-                --primary-hover: #00cc6d;
-                --bg: #05070a;
-                --card: #111827;
-                --accent: #3b82f6;
+                --bg: #030508;
+                --card: #0b1118;
+                --glass: rgba(255, 255, 255, 0.03);
             }
 
             body {
-                font-family: 'Montserrat', sans-serif;
+                font-family: 'Outfit', sans-serif;
                 background: var(--bg);
-                color: #e5e7eb;
+                color: #ffffff;
                 margin: 0;
-                overflow-x: hidden;
+                scroll-behavior: smooth;
             }
 
-            /* Notificação de Venda Fake (Gatilho de Prova Social) */
-            #sale-notification {
-                position: fixed;
-                bottom: 20px;
-                left: 20px;
-                background: white;
-                color: #333;
-                padding: 12px 20px;
-                border-radius: 50px;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-                z-index: 1000;
-                transform: translateY(150%);
-                transition: transform 0.5s ease;
-                font-size: 13px;
-            }
-
-            /* Headline de Alto Impacto */
-            .hero {
-                padding: 60px 20px;
-                background: radial-gradient(circle at top, #1e293b 0%, #05070a 100%);
+            /* --- HEADER & HERO --- */
+            header {
+                padding: 100px 20px 60px;
+                background: radial-gradient(circle at 50% 0%, #112240 0%, var(--bg) 70%);
                 text-align: center;
             }
 
-            .badge {
-                background: rgba(0, 255, 136, 0.1);
-                color: var(--primary);
-                padding: 6px 15px;
-                border-radius: 20px;
-                font-weight: bold;
+            .badge-ai {
+                background: linear-gradient(90deg, #00ff88, #3b82f6);
+                padding: 8px 20px;
+                border-radius: 100px;
                 font-size: 12px;
-                text-transform: uppercase;
-                margin-bottom: 20px;
+                font-weight: 900;
+                letter-spacing: 2px;
                 display: inline-block;
+                margin-bottom: 30px;
+                box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
             }
 
             h1 {
+                font-size: clamp(2rem, 5vw, 4rem);
                 font-weight: 900;
-                font-size: 2.8rem;
-                letter-spacing: -1px;
-                margin: 10px 0;
                 line-height: 1.1;
+                max-width: 900px;
+                margin: 0 auto 20px;
             }
 
-            .highlight { color: var(--primary); }
-
-            /* Grid de Benefícios Ultra */
-            .features-grid {
+            /* --- SEÇÃO ENTREGÁVEIS (RECHEIO) --- */
+            .deliverables {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 20px;
-                margin: 40px 0;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 25px;
+                padding: 50px 20px;
+                max-width: 1100px;
+                margin: auto;
             }
 
-            .feature-card {
+            .module-card {
                 background: var(--card);
-                padding: 25px;
-                border-radius: 20px;
-                border: 1px solid #1f2937;
-                transition: 0.3s;
-            }
-
-            .feature-card i {
-                font-size: 30px;
-                color: var(--primary);
-                margin-bottom: 15px;
-            }
-
-            /* Mockup de Checkout (Aumenta Confiança) */
-            .checkout-preview {
-                background: #f8fafc;
-                color: #1e293b;
-                border-radius: 15px;
-                padding: 20px;
-                margin-top: 30px;
-                text-align: left;
-            }
-
-            .payment-methods {
-                display: flex;
-                gap: 10px;
-                margin-top: 15px;
-                filter: grayscale(1);
-                opacity: 0.6;
-            }
-
-            /* Botão de Compra - Efeito Glossy */
-            .btn-glow {
-                background: linear-gradient(135deg, #00ff88 0%, #00bd65 100%);
-                color: #000 !important;
-                font-weight: 900;
-                padding: 25px;
-                border-radius: 15px;
-                display: block;
-                text-decoration: none;
-                font-size: 1.4rem;
-                text-align: center;
-                box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+                border: 1px solid rgba(255,255,255,0.05);
+                padding: 40px;
+                border-radius: 30px;
                 position: relative;
                 overflow: hidden;
             }
 
-            .btn-glow::after {
+            .module-card::before {
                 content: '';
                 position: absolute;
-                top: -50%;
-                left: -50%;
-                width: 200%;
-                height: 200%;
-                background: rgba(255,255,255,0.2);
-                transform: rotate(45deg);
-                transition: 0.5s;
-                animation: flare 3s infinite;
+                top: 0; left: 0; width: 100%; height: 4px;
+                background: linear-gradient(90deg, transparent, var(--primary), transparent);
             }
 
-            @keyframes flare {
-                0% { left: -150%; }
-                100% { left: 150%; }
+            /* --- DEPOIMENTOS ESTILO FEED --- */
+            .testimonial-wall {
+                background: #080c12;
+                padding: 80px 20px;
             }
 
-            /* Estilo Depoimentos Stories */
-            .stories-scroll {
+            .testimonial-grid {
                 display: flex;
                 overflow-x: auto;
-                gap: 15px;
-                padding: 20px 0;
+                gap: 20px;
+                padding: 20px;
                 scrollbar-width: none;
             }
 
-            .story-card {
-                min-width: 150px;
-                height: 250px;
-                background: #333;
-                border-radius: 15px;
-                position: relative;
-                background-size: cover;
-                background-position: center;
-                border: 2px solid var(--primary);
+            .test-card {
+                min-width: 320px;
+                background: var(--glass);
+                padding: 30px;
+                border-radius: 20px;
+                border: 1px solid rgba(255,255,255,0.1);
             }
 
-            @media (max-width: 600px) {
-                h1 { font-size: 2rem; }
+            /* --- BOTÃO ULTRA --- */
+            .cta-area {
+                text-align: center;
+                padding: 100px 20px;
+                background: linear-gradient(180deg, var(--bg) 0%, #0a192f 100%);
+            }
+
+            .ultra-btn {
+                background: #ffffff;
+                color: #000;
+                padding: 30px 60px;
+                font-size: 1.5rem;
+                font-weight: 900;
+                border-radius: 100px;
+                text-decoration: none;
+                display: inline-block;
+                transition: 0.3s;
+                box-shadow: 0 10px 40px rgba(255,255,255,0.2);
+            }
+
+            .ultra-btn:hover {
+                transform: translateY(-5px) scale(1.02);
+                box-shadow: 0 20px 60px rgba(0, 255, 136, 0.4);
+                background: var(--primary);
+            }
+
+            .price-tag {
+                font-size: 5rem;
+                font-weight: 900;
+                margin: 20px 0;
+                background: linear-gradient(180deg, #fff 30%, #444 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
         </style>
     </head>
     <body>
 
-    <div id="sale-notification">
-        <i class="fas fa-shopping-cart" style="color: var(--primary)"></i>
-        <span id="notification-text">Marcos de Belém acabou de adquirir o PRO</span>
-    </div>
-
-    <div class="hero">
-        <div class="badge">Acesso Vitalício Liberado</div>
-        <h1>DEIXE A <span class="highlight">IA TRABALHAR</span> ENQUANTO VOCÊ LUCRA.</h1>
-        <p style="font-size: 18px; color: #94a3b8;">A ferramenta definitiva para quem quer escalar negócios digitais em 2026.</p>
-    </div>
-
-    <div class="container" style="max-width: 900px; margin: auto; padding: 0 20px;">
+    <header>
+        <div class="badge-ai">PRODUTO ATUALIZADO V2.0</div>
+        <h1>TRANSFORME SUA <span style="color: var(--primary)">INTELIGÊNCIA</span> EM UMA MÁQUINA DE DINHEIRO.</h1>
+        <p style="opacity: 0.7; font-size: 1.2rem; max-width: 700px; margin: 20px auto;">Acesse a estrutura que os grandes players usam para criar, postar e vender 10x mais rápido que qualquer humano.</p>
         
-        <div style="box-shadow: 0 0 50px rgba(0, 255, 136, 0.2); border-radius: 20px; overflow: hidden; margin-bottom: 50px;">
-             <div style="padding-bottom:56.25%; position:relative;">
-                <iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-             </div>
-        </div>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fas fa-brain"></i>
-                <h3>Cérebro Digital</h3>
-                <p>Nossa IA aprende seu tom de voz e cria roteiros que conectam emocionalmente.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-bolt"></i>
-                <h3>Velocidade</h3>
-                <p>O que levava 5 horas para produzir agora leva 30 segundos cronometrados.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Escala Real</h3>
-                <p>Crie 30 dias de conteúdo em uma tarde e domine todos os canais de venda.</p>
+        <div style="margin-top: 50px; border-radius: 20px; border: 8px solid var(--glass); display: inline-block; width: 100%; max-width: 850px;">
+            <div style="padding-bottom:56.25%; position:relative;">
+                <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius: 12px;" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
+    </header>
 
-        <h2 style="text-align: center;">Resultados Reais de Alunos</h2>
-        <div class="stories-scroll">
-            <div class="story-card" style="background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80')"></div>
-            <div class="story-card" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80')"></div>
-            <div class="story-card" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80')"></div>
-            <div class="story-card" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80')"></div>
+    <div class="deliverables">
+        <div class="module-card">
+            <i class="fas fa-robot fa-3x" style="color: var(--primary)"></i>
+            <h3>01. O Cérebro do Bot</h3>
+            <p>Você recebe os Prompts Mestre. Não é o que você pergunta à IA, é COMO você pergunta. Gere roteiros que hipnotizam o público.</p>
         </div>
-
-        <div class="feature-card" style="margin-top: 50px; border: 2px solid var(--primary);">
-            <div style="text-align: center;">
-                <h2 style="margin: 0;">OFERTA DE LANÇAMENTO</h2>
-                <p style="text-decoration: line-through; opacity: 0.5;">De R$ 297,00</p>
-                <h1 style="font-size: 4rem; margin: 10px 0;" class="highlight">R$ 19,90</h1>
-                <p>Ou 2x de R$ 10,38 no cartão</p>
-            </div>
-
-            <div class="checkout-preview">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
-                    <span><b>IAsim PRO - Licença Premium</b></span>
-                    <span style="color: #16a34a;">R$ 19,90</span>
-                </div>
-                <p style="font-size: 12px; margin-top: 10px;"><i class="fas fa-lock"></i> Pagamento processado em ambiente 100% seguro.</p>
-                <div class="payment-methods">
-                    <i class="fab fa-cc-visa fa-2x"></i>
-                    <i class="fab fa-cc-mastercard fa-2x"></i>
-                    <i class="fas fa-qrcode fa-2x"></i>
-                </div>
-            </div>
-
-            <a href="https://t.me/Iasim_bot" class="btn-glow" style="margin-top: 20px;">
-                QUERO MEU ACESSO AGORA <i class="fas fa-arrow-right"></i>
-            </a>
-            
-            <p style="text-align: center; font-size: 12px; margin-top: 15px; opacity: 0.7;">
-                Vagas restantes: <span style="color: red; font-weight: bold;">07</span>
-            </p>
+        <div class="module-card">
+            <i class="fas fa-video fa-3x" style="color: var(--primary)"></i>
+            <h3>02. Edição Sem Toque</h3>
+            <p>Nossa lista de ferramentas que criam o vídeo para você. Basta colar o texto e a IA gera imagens, voz e legenda.</p>
         </div>
-
-        <footer style="margin-top: 80px; padding-bottom: 40px; text-align: center; border-top: 1px solid #1f2937;">
-            <div style="margin: 30px 0; display: flex; justify-content: center; gap: 40px; opacity: 0.6;">
-                <i class="fab fa-instagram fa-2x"></i>
-                <i class="fab fa-youtube fa-2x"></i>
-                <i class="fab fa-whatsapp fa-2x"></i>
-            </div>
-            <p style="font-size: 10px;">Este site não faz parte do Google ou do Facebook. Além disso, este site NÃO é endossado pelo Google ou Facebook em qualquer aspecto.</p>
-        </footer>
+        <div class="module-card">
+            <i class="fas fa-money-bill-wave fa-3x" style="color: var(--primary)"></i>
+            <h3>03. Funil de Conversão</h3>
+            <p>Como transformar visualizações em PIX. A estratégia de tráfego orgânico para quem não quer gastar 1 real com anúncios.</p>
+        </div>
     </div>
 
-    <script>
-        // Sistema de Notificações Fake
-        const names = ["Ricardo", "Ana", "Juliana", "Carlos", "Beatriz", "Marcos", "Fernanda"];
-        const cities = ["Belém", "São Paulo", "Icoaraci", "Curitiba", "Fortaleza", "Castanhal"];
-        
-        function showNotification() {
-            const notif = document.getElementById('sale-notification');
-            const text = document.getElementById('notification-text');
-            const randomName = names[Math.floor(Math.random() * names.length)];
-            const randomCity = cities[Math.floor(Math.random() * cities.length)];
-            
-            text.innerHTML = `<b>${randomName}</b> de ${randomCity} acabou de adquirir o PRO`;
-            
-            notif.style.transform = "translateY(0)";
-            setTimeout(() => {
-                notif.style.transform = "translateY(150%)";
-            }, 4000);
-        }
+    <div class="testimonial-wall">
+        <h2 style="text-align: center; margin-bottom: 50px;">O QUE DIZEM QUEM JÁ ESTÁ NO TOPO</h2>
+        <div class="testimonial-grid">
+            <div class="test-card">
+                <p>"Em 3 dias eu criei o conteúdo do mês inteiro. O IAsim PRO salvou minha agência."</p>
+                <b>- Felipe S. (Gestor de Tráfego)</b>
+            </div>
+            <div class="test-card" style="border-color: var(--primary)">
+                <p>"Antes eu perdia 4 horas pra postar 1 vídeo. Hoje o bot faz tudo e eu só clico em publicar. Faturamento dobrou em 15 dias!"</p>
+                <b>- Mariana L. (Influencer Digital)</b>
+            </div>
+            <div class="test-card">
+                <p>"Minha maior dúvida era se iniciantes conseguiam. O passo a passo é tão simples que minha avó faria."</p>
+                <b>- João Pedro (Estudante)</b>
+            </div>
+        </div>
+    </div>
 
-        setInterval(showNotification, 12000); // Mostra a cada 12 segundos
-        setTimeout(showNotification, 3000); // Primeira mostra após 3s
-    </script>
+    <div class="cta-area">
+        <h3>ESTÁ PRONTO PARA O PRÓXIMO NÍVEL?</h3>
+        <p>Acesso vitalício + Todas as atualizações futuras inclusas.</p>
+        
+        <div class="price-tag">R$ 19,90</div>
+        
+        <a href="https://t.me/Iasim_bot" class="ultra-btn">
+            QUERO DOMINAR A IA AGORA <i class="fas fa-chevron-right" style="margin-left: 10px;"></i>
+        </a>
+        
+        <div style="margin-top: 40px; display: flex; justify-content: center; gap: 30px; opacity: 0.5;">
+            <span><i class="fas fa-shield-alt"></i> Compra Segura</span>
+            <span><i class="fas fa-history"></i> Acesso Imediato</span>
+            <span><i class="fas fa-undo"></i> 7 Dias de Garantia</span>
+        </div>
+    </div>
+
+    <div style="max-width: 800px; margin: 80px auto; padding: 0 20px;">
+        <h2 style="text-align: center;">PERGUNTAS FREQUENTES</h2>
+        <div style="background: var(--card); border-radius: 20px; padding: 20px;">
+            <p><b>Preciso de algum conhecimento prévio?</b><br>Absolutamente não. O IAsim PRO foi desenhado para quem nunca abriu uma ferramenta de IA na vida.</p>
+            <hr style="opacity: 0.1; margin: 20px 0;">
+            <p><b>O pagamento é mensal?</b><br>Não! O pagamento é ÚNICO. Você paga R$ 19,90 uma vez e o acesso é seu para sempre.</p>
+            <hr style="opacity: 0.1; margin: 20px 0;">
+            <p><b>E se eu não gostar?</b><br>Basta nos enviar um e-mail em até 7 dias e devolvemos 100% do seu investimento, sem burocracia.</p>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 40px; font-size: 11px; opacity: 0.4;">
+        &copy; 2026 IAsim PRO. CNPJ: 00.000.000/0001-00 <br>
+        Este site não é do Facebook. Este site não é do Google.
+    </footer>
 
     </body>
     </html>
