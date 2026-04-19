@@ -361,7 +361,7 @@ def oferta():
             /* --- Grid de Serviços --- */
             .grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 gap: 40px;
             }
 
@@ -392,31 +392,39 @@ def oferta():
                 font-weight: 600;
             }
 
-            /* --- Depoimentos Corrigidos --- */
+            /* --- DEPOIMENTOS CORRIGIDOS (TAMANHO REDUZIDO E SEM CORTE) --- */
             .test-scroll {
-                display: flex; gap: 25px; overflow-x: auto; padding: 20px 0 40px; scrollbar-width: none;
+                display: flex; gap: 20px; overflow-x: auto; padding: 20px 10px 40px; scrollbar-width: none;
             }
 
             .test-item {
-                min-width: 350px;
-                max-width: 350px;
+                min-width: 280px;
+                max-width: 300px;
                 background: #1e293b;
-                padding: 35px;
-                border-radius: 24px;
+                padding: 25px;
+                border-radius: 20px;
                 border-bottom: 4px solid var(--brand);
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
-                min-height: 280px;
+                height: auto;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
             }
 
-            .user-info { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+            .user-info { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
             .user-info img {
-                width: 60px; height: 60px; border-radius: 50%; object-fit: cover;
+                width: 50px; height: 50px; border-radius: 50%; object-fit: cover;
                 border: 2px solid var(--brand);
+                flex-shrink: 0;
             }
 
-            .test-text { font-style: italic; color: #cbd5e1; line-height: 1.5; font-size: 15px; }
+            .test-text { 
+                font-style: italic; 
+                color: #cbd5e1; 
+                line-height: 1.4; 
+                font-size: 14px; 
+                margin: 0;
+            }
 
             /* --- FAQ --- */
             .faq-container { max-width: 800px; margin: auto; }
@@ -441,8 +449,6 @@ def oferta():
                 box-shadow: 0 25px 50px rgba(0, 255, 136, 0.2);
                 transition: 0.3s;
             }
-
-            .main-btn:hover { transform: scale(1.05); }
 
             footer {
                 padding: 60px 20px;
@@ -498,18 +504,6 @@ def oferta():
         </div>
     </div>
 
-    <div class="section" style="background: rgba(255,255,255,0.02); border-radius: 60px;">
-        <h2 class="section-title">Para quem é o IAsim Pró?</h2>
-        <div class="target-list">
-            <div class="target-item">Infoprodutores</div>
-            <div class="target-item">Gestores de Tráfego</div>
-            <div class="target-item">Social Medias</div>
-            <div class="target-item">Afiliados</div>
-            <div class="target-item">Negócios Locais</div>
-            <div class="target-item">Influencers em ascensão</div>
-        </div>
-    </div>
-
     <div class="section">
         <h2 class="section-title">Resultados Reais</h2>
         <div class="test-scroll">
@@ -518,7 +512,7 @@ def oferta():
                     <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ricardo">
                     <div><b>Ricardo Alencar</b><br><small>Produtor Digital</small></div>
                 </div>
-                <div class="test-text">"O bot gerou um roteiro que bateu 150k views em apenas 18 horas. Nunca vi nada tão preciso para prender a atenção do público."</div>
+                <p class="test-text">"O bot gerou um roteiro que bateu 150k views em apenas 18 horas. Nunca vi nada tão preciso para prender a atenção do público."</p>
             </div>
             
             <div class="test-item">
@@ -526,7 +520,7 @@ def oferta():
                     <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Julia">
                     <div><b>Julia Mendes</b><br><small>Social Media</small></div>
                 </div>
-                <div class="test-text">"Parei de perder noites criando calendários. O IAsim Pró faz em 5 minutos o que eu levava 3 dias para estruturar."</div>
+                <p class="test-text">"Parei de perder noites criando calendários. O IAsim Pró faz em 5 minutos o que eu levava 3 dias para estruturar."</p>
             </div>
             
             <div class="test-item">
@@ -534,7 +528,7 @@ def oferta():
                     <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Bruno">
                     <div><b>Bruno Costa</b><br><small>Afiliado Profissional</small></div>
                 </div>
-                <div class="test-text">"As CTAs desse bot são matadoras. Minha taxa de conversão no tráfego orgânico subiu 40% desde que comecei a usar."</div>
+                <p class="test-text">"As CTAs desse bot são matadoras. Minha taxa de conversão no tráfego orgânico subiu 40% desde que comecei a usar o IAsim."</p>
             </div>
         </div>
     </div>
