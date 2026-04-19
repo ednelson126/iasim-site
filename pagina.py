@@ -281,7 +281,7 @@ def oferta():
             }
 
             .container {
-                max-width: 850px;
+                max-width: 900px;
                 margin: auto;
                 padding: 20px;
             }
@@ -301,6 +301,12 @@ def oferta():
 
             h1 { color: #22c55e; }
 
+            .img {
+                width: 100%;
+                border-radius: 10px;
+                margin-top: 15px;
+            }
+
             button {
                 padding: 15px;
                 background: #22c55e;
@@ -318,7 +324,6 @@ def oferta():
                 font-size: 36px;
                 color: #22c55e;
                 text-align: center;
-                margin: 10px;
             }
 
             .highlight {
@@ -342,19 +347,15 @@ def oferta():
 
         <script>
             function startTimer() {
-                var time = 1200;
-
+                var time = 900;
                 setInterval(function() {
                     var min = Math.floor(time / 60);
                     var sec = time % 60;
-
                     document.getElementById("timer").innerHTML =
-                        "⏳ Essa página pode sair do ar em: " + min + ":" + (sec < 10 ? "0" : "") + sec;
-
+                        "⏳ Oferta expira em: " + min + ":" + (sec < 10 ? "0" : "") + sec;
                     if (time > 0) time--;
                 }, 1000);
             }
-
             window.onload = startTimer;
         </script>
 
@@ -362,148 +363,111 @@ def oferta():
 
     <body>
 
-        <div class="container">
+    <div class="container">
 
-            <h1>🤖 IAsim PRO</h1>
-            <h2>O jeito mais simples de começar a ganhar dinheiro com IA ainda hoje</h2>
+        <!-- 1 HEADLINE -->
+        <h1>Ganhe dinheiro com IA em poucos dias, mesmo começando do zero e sem aparecer</h1>
 
-            <!-- VSL -->
-            <div class="box">
-                <h3>⚠️ Assista isso antes de tomar qualquer decisão</h3>
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
-            </div>
+        <!-- 2 VSL -->
+        <div class="box">
+            <h3>🎥 Assista antes de tudo</h3>
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
 
-            <!-- DOR -->
-            <div class="box">
-                <h3>Seja sincero...</h3>
-
-                <p>Você já tentou ganhar dinheiro na internet e não conseguiu?</p>
-
-                <p>Já viu pessoas crescendo enquanto você continua no mesmo lugar?</p>
-
-                <p class="highlight">E isso começa a dar uma sensação ruim… de estar ficando pra trás.</p>
-            </div>
-
-            <!-- HISTÓRIA -->
-            <div class="box">
-                <h3>A diferença entre quem consegue e quem não consegue</h3>
-
-                <p>Não é inteligência.</p>
-                <p>Não é sorte.</p>
-
-                <p class="highlight">É acesso às ferramentas certas.</p>
-
-                <p>E hoje, quem usa IA está anos na frente.</p>
-            </div>
-
-            <!-- SOLUÇÃO -->
-            <div class="box">
-                <h3>🚀 Foi por isso que criamos o IAsim PRO</h3>
-
-                <p>Um sistema que literalmente pensa por você.</p>
-
-                <p class="highlight">Ele cria conteúdo, ideias e estratégias automaticamente.</p>
-            </div>
-
-            <!-- DETALHAMENTO EXTREMO -->
-            <div class="box">
-                <h3>💡 Tudo que você recebe:</h3>
-
-                <p><b>🔥 Ideias virais:</b><br>
-                Nunca mais fique travado. Receba ideias que prendem atenção imediatamente.</p>
-
-                <p><b>🎬 Roteiros prontos:</b><br>
-                Vídeos estruturados para engajar e crescer.</p>
-
-                <p><b>📱 Conteúdos completos:</b><br>
-                Textos prontos para copiar e usar.</p>
-
-                <p><b>💰 Estratégias de venda:</b><br>
-                Técnicas usadas por quem realmente ganha dinheiro.</p>
-
-                <p class="highlight">
-                Tudo isso direto no Telegram, simples e rápido.
-                </p>
-            </div>
-
-            <!-- PROVA -->
-            <div class="box">
-                <h3>💬 Resultados reais</h3>
-
-                <p>⭐⭐⭐⭐⭐ “Nunca mais fiquei sem ideia”</p>
-                <p>⭐⭐⭐⭐⭐ “Comecei do zero e já estou postando todo dia”</p>
-                <p>⭐⭐⭐⭐⭐ “Simples e poderoso”</p>
-            </div>
-
-            <!-- QUEBRA DE OBJEÇÃO -->
-            <div class="box">
-                <h3>❌ Não é pra você se:</h3>
-
-                <p>Você não quer agir.</p>
-                <p>Prefere continuar tentando sozinho.</p>
-
-                <h3>✅ É pra você se:</h3>
-
-                <p>Quer algo pronto.</p>
-                <p>Quer começar rápido.</p>
-                <p>Quer resultado.</p>
-            </div>
-
-            <!-- URGÊNCIA -->
-            <div class="box">
-                <p id="timer" class="timer"></p>
-                <p style="text-align:center;">⚠️ Essa condição pode sair do ar a qualquer momento</p>
-            </div>
-
-            <!-- ANCORAGEM -->
-            <div class="box">
-                <h3>💰 Quanto isso deveria custar?</h3>
-
-                <p>Se fosse um curso completo… seria facilmente R$197 ou mais.</p>
-
-                <p>Mas hoje você não vai pagar isso.</p>
-            </div>
-
-            <!-- OFERTA -->
-            <div class="box">
-                <h3>🔥 Oferta especial hoje</h3>
-
-                <p class="price">R$19,90</p>
-
-                <p style="text-align:center;">
-                Pagamento único • Acesso imediato
-                </p>
-
-                <a href="https://t.me/Iasim_bot">
-                    <button>🚀 QUERO ACESSAR AGORA</button>
-                </a>
-            </div>
-
-            <!-- GARANTIA -->
-            <div class="box">
-                <h3>🔒 Zero risco</h3>
-
-                <p>Você pode testar e ver por conta própria.</p>
-
-                <p class="highlight">Sem risco. Sem complicação.</p>
-            </div>
-
-            <!-- FECHAMENTO -->
-            <div class="box">
-                <h3>Agora a escolha é sua</h3>
-
-                <p>Continuar parado…</p>
-
-                <p>Ou começar agora com algo pronto.</p>
-
-                <p class="highlight">A oportunidade está aqui.</p>
-
-                <a href="https://t.me/Iasim_bot">
-                    <button>🔥 COMEÇAR AGORA</button>
-                </a>
-            </div>
-
+            <p>
+            Um sistema simples que cria conteúdos virais, ideias e estratégias prontas para você lucrar com inteligência artificial.
+            </p>
         </div>
+
+        <!-- 3 PROVA SOCIAL -->
+        <div class="box">
+            <h3>💬 Pessoas já estão usando</h3>
+            <p>⭐⭐⭐⭐⭐ “Já comecei a postar todo dia”</p>
+            <p>⭐⭐⭐⭐⭐ “Nunca mais fiquei sem ideia”</p>
+
+            <img class="img" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b">
+        </div>
+
+        <!-- 4 PROBLEMA -->
+        <div class="box">
+            <h3>Você está travado?</h3>
+
+            <p>Sem ideias… sem direção… sem resultado?</p>
+
+            <p class="highlight">
+            Enquanto outros crescem, você continua no mesmo lugar.
+            </p>
+
+            <img class="img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+        </div>
+
+        <!-- 5 SOLUÇÃO -->
+        <div class="box">
+            <h3>🚀 O que é o IAsim PRO?</h3>
+
+            <p>Um sistema que faz o trabalho difícil por você.</p>
+
+            <p><b>✔ Ideias virais prontas</b> → Você nunca mais trava</p>
+            <p><b>✔ Roteiros prontos</b> → Conteúdo que prende atenção</p>
+            <p><b>✔ Estratégias de venda</b> → Conteúdo que gera dinheiro</p>
+
+            <img class="img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+        </div>
+
+        <!-- 6 FAQ -->
+        <div class="box">
+            <h3>❓ Perguntas Frequentes</h3>
+
+            <p><b>Funciona para iniciantes?</b><br>Sim, é feito para quem está começando.</p>
+
+            <p><b>Preciso aparecer?</b><br>Não.</p>
+
+            <p><b>Funciona no celular?</b><br>Sim, 100%.</p>
+        </div>
+
+        <!-- 7 DEPOIMENTOS -->
+        <div class="box">
+            <h3>💬 Resultados</h3>
+
+            <p>⭐⭐⭐⭐⭐ “Simplesmente funciona”</p>
+            <p>⭐⭐⭐⭐⭐ “Muito acima do esperado”</p>
+
+            <img class="img" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+        </div>
+
+        <!-- 8 OFERTA -->
+        <div class="box">
+            <h3>💰 Oferta Especial</h3>
+
+            <p>Esse sistema poderia custar facilmente R$197...</p>
+
+            <p class="price">R$19,90</p>
+
+            <p>Pagamento único • acesso imediato</p>
+
+            <a href="https://t.me/Iasim_bot">
+                <button>🚀 SIM, QUERO COMEÇAR AGORA</button>
+            </a>
+        </div>
+
+        <!-- 9 CTA -->
+        <div class="box">
+            <h3>⚡ Última chance</h3>
+
+            <p id="timer" class="timer"></p>
+
+            <a href="https://t.me/Iasim_bot">
+                <button>🔥 QUERO GARANTIR MINHA VAGA</button>
+            </a>
+        </div>
+
+        <!-- 10 GARANTIA -->
+        <div class="box">
+            <h3>🔒 Garantia</h3>
+
+            <p>Teste sem risco. Acesso imediato.</p>
+        </div>
+
+    </div>
 
     </body>
     </html>
