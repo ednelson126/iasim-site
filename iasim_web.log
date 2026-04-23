@@ -1,0 +1,76 @@
+2026-04-22 19:05:55,450 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.100.28:5001
+2026-04-22 19:05:55,450 | INFO | [33mPress CTRL+C to quit[0m
+2026-04-22 19:06:28,027 | INFO | 127.0.0.1 - - [22/Apr/2026 19:06:28] "GET /oferta HTTP/1.1" 200 -
+2026-04-22 19:07:53,213 | INFO | 127.0.0.1 - - [22/Apr/2026 19:07:53] "GET /entrar HTTP/1.1" 200 -
+2026-04-22 19:17:09,713 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.100.28:5001
+2026-04-22 19:17:09,713 | INFO | [33mPress CTRL+C to quit[0m
+2026-04-22 19:17:32,874 | INFO | 127.0.0.1 - - [22/Apr/2026 19:17:32] "GET /oferta HTTP/1.1" 200 -
+2026-04-22 19:19:17,789 | INFO | 127.0.0.1 - - [22/Apr/2026 19:19:17] "GET /oferta HTTP/1.1" 200 -
+2026-04-22 19:28:32,051 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.100.28:5001
+2026-04-22 19:28:32,051 | INFO | [33mPress CTRL+C to quit[0m
+2026-04-22 19:29:10,792 | INFO | 127.0.0.1 - - [22/Apr/2026 19:29:10] "GET /oferta HTTP/1.1" 200 -
+2026-04-22 19:31:20,386 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.100.28:5001
+2026-04-22 19:31:20,386 | INFO | [33mPress CTRL+C to quit[0m
+2026-04-22 19:31:31,893 | INFO | 127.0.0.1 - - [22/Apr/2026 19:31:31] "GET /oferta HTTP/1.1" 200 -
+2026-04-22 19:49:45,023 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.100.28:5001
+2026-04-22 19:49:45,023 | INFO | [33mPress CTRL+C to quit[0m
+2026-04-22 19:50:06,625 | INFO | 127.0.0.1 - - [22/Apr/2026 19:50:06] "GET /oferta HTTP/1.1" 200 -
+2026-04-22 20:04:58,753 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.100.28:5001
+2026-04-22 20:04:58,754 | INFO | [33mPress CTRL+C to quit[0m
+2026-04-22 20:05:11,523 | INFO | 127.0.0.1 - - [22/Apr/2026 20:05:11] "GET /oferta HTTP/1.1" 200 -
+2026-04-22 20:07:01,194 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.100.28:5001
+2026-04-22 20:07:01,194 | INFO | [33mPress CTRL+C to quit[0m
+2026-04-22 20:07:30,616 | INFO | 127.0.0.1 - - [22/Apr/2026 20:07:30] "GET /oferta HTTP/1.1" 200 -
+2026-04-22 20:08:56,126 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.100.28:5001
+2026-04-22 20:08:56,126 | INFO | [33mPress CTRL+C to quit[0m
+2026-04-22 20:09:10,966 | INFO | 127.0.0.1 - - [22/Apr/2026 20:09:10] "GET /oferta HTTP/1.1" 200 -
+2026-04-22 20:11:14,811 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.100.28:5001
+2026-04-22 20:11:14,812 | INFO | [33mPress CTRL+C to quit[0m
+2026-04-22 20:11:22,570 | INFO | 127.0.0.1 - - [22/Apr/2026 20:11:22] "GET /oferta HTTP/1.1" 200 -
+2026-04-22 20:13:41,350 | INFO | 127.0.0.1 - - [22/Apr/2026 20:13:41] "GET /entrar HTTP/1.1" 200 -
+2026-04-22 20:21:13,260 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.100.28:5001
+2026-04-22 20:21:13,261 | INFO | [33mPress CTRL+C to quit[0m
+2026-04-22 20:21:38,783 | INFO | 127.0.0.1 - - [22/Apr/2026 20:21:38] "GET /oferta HTTP/1.1" 200 -
+2026-04-22 20:24:08,588 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.100.28:5001
+2026-04-22 20:24:08,588 | INFO | [33mPress CTRL+C to quit[0m
+2026-04-22 20:24:32,058 | INFO | 127.0.0.1 - - [22/Apr/2026 20:24:32] "GET /oferta HTTP/1.1" 200 -
+2026-04-22 20:25:58,578 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.100.28:5001
+2026-04-22 20:25:58,578 | INFO | [33mPress CTRL+C to quit[0m
+2026-04-22 20:26:17,251 | INFO | 127.0.0.1 - - [22/Apr/2026 20:26:17] "[33mGET /oferta! HTTP/1.1[0m" 404 -
+2026-04-22 20:26:21,837 | INFO | 127.0.0.1 - - [22/Apr/2026 20:26:21] "GET /oferta HTTP/1.1" 200 -
