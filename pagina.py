@@ -746,7 +746,7 @@ OFERTA_HTML = """
   <div class="hero-inner">
     <div class="hero-badge"><i class="fas fa-bolt"></i> Powered by IA Avançada</div>
     <h1>O Bot que cria <span class="accent">Conteúdo Viral</span> para você lucrar todos os dias.</h1>
-    <p class="hero-sub">Chega de bloqueio criativo. Com o IAsim PRO você tem uma linha de produção automatizada de roteiros, legendas e estratégias de venda — direto no Telegram.</p>
+    <p class="hero-sub">Chega de bloqueio para criar conteúdos. Com o IAsim PRO você tem uma linha de produção automatizada de roteiros, legendas e estratégias de venda — direto no Telegram.</p>
     <a href="#cta" class="hero-cta">
       <i class="fab fa-telegram"></i>
       QUERO MEU ACESSO AGORA
@@ -775,7 +775,7 @@ OFERTA_HTML = """
       <div class="recurso">
         <div class="recurso-icon">💡</div>
         <h3>Ideias Virais Sob Demanda</h3>
-        <p>5 ideias únicas para o seu nicho com análise de por que vão viralizar e qual gatilho psicológico usar.</p>
+        <p>5 ideias únicas para o seu nicho com análise de por que irão viralizar e qual gatilho psicológico usar.</p>
       </div>
       <div class="recurso">
         <div class="recurso-icon">🎬</div>
@@ -785,17 +785,17 @@ OFERTA_HTML = """
       <div class="recurso">
         <div class="recurso-icon">🔥</div>
         <h3>Pacote de Conteúdo Completo</h3>
-        <p>Carrossel, vídeo curto, stories e legenda — tudo de uma vez. Semana inteira de conteúdo em minutos.</p>
+        <p>Carrossel, vídeo curto, stories e legenda — tudo de uma vez. A semana inteira de conteúdo em minutos.</p>
       </div>
       <div class="recurso">
         <div class="recurso-icon">📊</div>
         <h3>Estratégia de Vendas</h3>
-        <p>Calendário de 7 dias, funil orgânico completo e copies prontas para stories com gatilhos de conversão.</p>
+        <p>Calendário de 7 dias, funil orgânico completo e copys prontas para stories com gatilhos de conversão.</p>
       </div>
       <div class="recurso">
         <div class="recurso-icon">🎯</div>
         <h3>Personalização por Nicho</h3>
-        <p>Todo conteúdo é gerado especificamente para o seu nicho. Sem respostas genéricas ou templatesóbvios.</p>
+        <p>Todo conteúdo é gerado especificamente para o seu nicho. Sem respostas genéricas ou templates óbvios.</p>
       </div>
       <div class="recurso">
         <div class="recurso-icon">⚡</div>
